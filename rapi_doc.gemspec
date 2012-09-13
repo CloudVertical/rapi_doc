@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "rspec", ">= 2.7.0"
   gem.add_dependency "bundler", ">= 1.0.0"
   gem.add_dependency "jeweler", ">= 1.6.4"
-  gem.add_dependency "rcov", ">= 0"
+  # gem.add_dependency "rcov", ">= 0"
   
   gem.require_paths = ["lib"]  
 end
