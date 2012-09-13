@@ -33,27 +33,8 @@ module RapiDoc
     end
 
     def get_resources!
-      #yml = get_config || []
-      #yml.collect { |key, val| ResourceDoc.new(key, val["location"], controller_dir(val["controller_name"])) }
-      controller_info = get_controller_info!
-      resources = []
-      controller_info.each do |controller, action_entries|
-        #controller_class = controller.capitalize + 'Controller'
-        controller_location = controller_dir(controller + '_controller.rb')
-        controller_base_routes = action_entries.select do |action, method, url|
-          url.index('/', 1).nil?
-        end
-        # base urls differ only by the method [GET or POST]. So, any one will do.
-        controller_url = controller_base_routes[0][2].gsub(/\(.*\)/, '') # omit the trailing format
-        #controller_methods = controller_base_routes.map { |action, method, url| method }
-        if block_given?
-          controller_include = yield [controller, controller_url, controller_location]
-        else
-          controller_include = true
-        end
-        resources << ResourceDoc.new(controller, controller_url, controller_location) if controller_include
-      end
-      resources
+      yml = YAML.load(File.open(config_dir+'/config.yml'))
+      yml.collect { |key, val| ResourceDoc.new(key, val["location"], controller_dir(val["controller_name"])) }
     end
 
     # Generates views and their index in a temp directory
