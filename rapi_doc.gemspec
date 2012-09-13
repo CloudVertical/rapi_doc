@@ -9,8 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage    = ""
   gem.summary     = ""
   gem.description = ""
-
-  gem.files = %x{ git ls-files }
+  gem.files = %x{ git ls-files }.split("\n")
   
   gem.require_paths = ["lib"]  
 end
