@@ -3,6 +3,8 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gemspec
+
 gem 'activesupport', '>= 2.1'
 gem 'haml'
 gem 'rdoc'
