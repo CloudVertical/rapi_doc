@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name    = "rapi_doc"
-  gem.version = "0.4"
+  gem.version = "0.6"
   gem.platform    = Gem::Platform::RUBY
   gem.author      = ""
   gem.email       = ""

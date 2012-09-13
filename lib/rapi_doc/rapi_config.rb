@@ -4,7 +4,7 @@ module RapiDoc
     # following helper methods return the directory location if no file type is specified or return the file location
     # for that directory if one is supplied
     def template_dir(f = nil)
-      @template_dir ||= File.join(File.dirname(__FILE__), '../../templates')
+      @template_dir ||= File.join(::Rails.root.to_s, 'config/rapi_doc')
       form_file_name @template_dir, f
     end
      
